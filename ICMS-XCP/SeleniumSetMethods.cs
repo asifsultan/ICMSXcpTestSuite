@@ -33,9 +33,10 @@ namespace ICMS_XCP
 
         // Selecting a drop down control
 
-        public static void SelectDropDown(this  IWebElement element, string value)
+        public static void SelectDropDown(this  IWebElement element, int index)
         {
-            new SelectElement(element).SelectByValue(value);
+            new SelectElement(element).SelectByIndex(index);
+
             
         }
 

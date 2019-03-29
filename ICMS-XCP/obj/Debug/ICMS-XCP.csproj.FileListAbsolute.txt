@@ -22,3 +22,27 @@ c:\users\wasif\documents\visual studio 2015\Projects\ICMS-XCP\ICMS-XCP\obj\Debug
 c:\users\wasif\documents\visual studio 2015\Projects\ICMS-XCP\ICMS-XCP\obj\Debug\ICMS-XCP.csproj.ResolveComReference.cache
 c:\users\wasif\documents\visual studio 2015\Projects\ICMS-XCP\ICMS-XCP\obj\Debug\ICMS-XCP.exe
 c:\users\wasif\documents\visual studio 2015\Projects\ICMS-XCP\ICMS-XCP\obj\Debug\ICMS-XCP.pdb
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\ICMS-XCP.exe.config
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\obj\Debug\Interop.AutoItX3Lib.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\obj\Debug\ICMS-XCP.csproj.ResolveComReference.cache
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\obj\Debug\ICMS-XCP.exe
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\obj\Debug\ICMS-XCP.pdb
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\nunit.engine.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\nunit.engine.api.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\ICMS-XCP.exe
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\ICMS-XCP.pdb
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\Excel.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\nunit.framework.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\SeleniumExtras.PageObjects.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\SeleniumExtras.WaitHelpers.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\WebDriver.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\WebDriver.Support.dll
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\Excel.pdb
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\nunit.framework.pdb
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\nunit.framework.xml
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\WebDriver.xml
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\bin\Debug\WebDriver.Support.xml
+C:\Users\Wasif\Documents\GitHub\ICMSXcpTestSuite\ICMS-XCP\obj\Debug\ICMS-XCP.csprojResolveAssemblyReference.cache

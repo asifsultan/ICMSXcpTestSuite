@@ -63,9 +63,6 @@ namespace ICMS_XCP
         [FindsBy(How = How.XPath, Using = "//a[contains(@onclick,'icms_cisu_supervisor_ass') and contains(text(),'2019-222420')]")]
         public IWebElement CISUSupervisor { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//a[contains(@onclick,'icms_cisu_investigation') and contains(text(),'2019-222428')]")]
-        public IWebElement CISUInvestigator { get; set; }
-
         [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2035-inputEl")]
         public IWebElement EnterPriliminaryTriage { get; set; }
 
@@ -79,8 +76,8 @@ namespace ICMS_XCP
         public IWebElement CompleteTriageBtn { get; set; }
 
 
-        //[FindsBy(How = How.Id, Using = "xcp_button-1141-btnInnerEl")]
-        //public IWebElement CompleteStepBtn { get; set; }
+        [FindsBy(How = How.Id, Using = "xcp_button-1141-btnInnerEl")]
+        public IWebElement CompleteValidationBtn { get; set; }
 
         [FindsBy(How = How.Id, Using = "button-1095-btnIconEl")]
         public IWebElement LastPageBtn { get; set; }
@@ -92,15 +89,15 @@ namespace ICMS_XCP
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Assessment/Designation')]")]
         public IWebElement AssessmentTab { get; set; }
 
-        [FindsBy(How = How.Id, Using = "xcp_button-2094-btnIconEl")]
+        [FindsBy(How = How.Id, Using = "xcp_button-2117-btnIconEl")]
         public IWebElement AddAllegationBtn { get; set; }
 
 
-        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2392-inputEl")]
-        public IWebElement ComplainingPartyDB { get; set; }
+        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2415-trigger-picker")]
+        public IWebElement ComplainingPartyTrigger { get; set; }
 
-        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2395-inputEl")]
-        public IWebElement InvolvePartyDB { get; set; }
+        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2418-trigger-picker")]
+        public IWebElement InvolvePartyTrigger { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@data-recordindex = '0']")]
         public IWebElement SelectFirstItemOnIndex { get; set; }
@@ -108,13 +105,13 @@ namespace ICMS_XCP
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Add')]")]
         public IWebElement AddBtn { get; set; }
 
-        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2423-inputEl")]
+        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2447-inputEl")]
         public IWebElement SelectChargeInput { get; set; }
 
-        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2424-inputEl")]
+        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2448-inputEl")]
         public IWebElement SelectProtectedInput { get; set; }//Discrimination //Race
 
-        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2425-inputEl")]
+        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-2449-inputEl")]
         public IWebElement SelectDesignationInput { get; set; } // A
 
         
@@ -125,17 +122,14 @@ namespace ICMS_XCP
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Finish')]")]
         public IWebElement AllegationFinishBtn { get; set; }
 
-        [FindsBy(How = How.Id, Using = "xcp_button-1167-btnIconEl")]
+        [FindsBy(How = How.Id, Using = "xcp_button-1190-btnIconEl")]
         public IWebElement SaveFinalDesignation { get; set; }
 
         [FindsBy(How = How.Id, Using = "xcp_dropdown_list-1176-inputEl")]
         public IWebElement AssignInvestigator { get; set; } //CISU Investigator 1
 
-        [FindsBy(How = How.Id, Using = "xcp_dropdown_list-1151-inputEl")]
-        public IWebElement NextStepInvestigator { get; set; } //CISU Investigator 1
-
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Complete')]")]
-        public IWebElement CompleteStepBtn { get; set; }//Discrimination //Race
+        public IWebElement CompleteSupervisorBtn { get; set; }//Discrimination //Race
 
         //[FindsBy(How = How.Id, Using = "xcp_dropdown_list-5293-inputEl")]
         //public IWebElement SelectDesignationInput { get; set; } // A
@@ -152,20 +146,20 @@ namespace ICMS_XCP
             //SaveTriageData.Clicks();
             waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-1141-inputEl"), 18);
             DDLforNextStep.EnterText("Triage Complete");
-            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Complete')]"), 18);
-            CompleteStepBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("xcp_button-1130-btnInnerEl"), 18);
+            CompleteTriageBtn.Clicks();
 
             
         }
 
         public void CompleteInitialValidation()
         {
-            waitForPageUntilElementIsVisible(By.XPath("//a[contains(@onclick,'icms_cisu_validation') and contains(text(),'2019-222420')]"), 18);
+            waitForPageUntilElementIsVisible(By.XPath("//a[contains(@onclick,'icms_cisu_validation') and contains(text(),'2019-222420')]"), 8);
             CISUValidation.Clicks();
-            waitForPageUntilElementIsVisible(By.Id("xcp_button-1164-btnInnerEl"), 18);
+            waitForPageUntilElementIsVisible(By.Id("xcp_button-1164-btnInnerEl"), 8);
             AquireCaseValdiation.Clicks();
-            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Complete')]"), 18); ;
-            CompleteStepBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("xcp_button-1141-btnInnerEl"), 8);
+            CompleteValidationBtn.Clicks();
 
         }
 
@@ -175,49 +169,51 @@ namespace ICMS_XCP
            LastPageBtn.Clicks();
             waitForPageUntilElementIsVisible(By.XPath("//a[contains(@onclick,'icms_cisu_supervisor_ass') and contains(text(),'2019-222420')]"), 8);
             CISUSupervisor.Clicks();
-            waitForPageUntilElementIsVisible(By.Id("xcp_button-1164-btnInnerEl"), 18);
-            AquireSuperviosrTask.Clicks();
+            //waitForPageUntilElementIsVisible(By.Id("xcp_button-1164-btnInnerEl"), 8);
+            //AquireSuperviosrTask.Clicks();
             waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-1176-inputEl"), 20);
             AssignInvestigator.EnterText("CISU Investigator 1");
-            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Complete')]"), 18);
-            CompleteStepBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Complete')]"), 8);
+            CompleteSupervisorBtn.Clicks();
 
         }
 
-        public void CompleteInvestigator()
+        public void CompelteInvestigator()
         {
-           
-            waitForPageUntilElementIsVisible(By.XPath("//a[contains(@onclick,'icms_cisu_investigation') and contains(text(),'2019-222428')]"), 18);
-            CISUInvestigator.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("button-1095-btnIconEl"), 20);
+            LastPageBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.XPath("//a[contains(@onclick,'icms_cisu_supervisor_ass') and contains(text(),'2019-222420')]"), 8);
+            CISUSupervisor.Clicks();
             //waitForPageUntilElementIsVisible(By.Id("xcp_button-1164-btnInnerEl"), 8);
             //AquireSuperviosrTask.Clicks();
             waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Assessment/Designation')]"), 20);
             AssessmentTab.Clicks();
-            waitForPageUntilElementIsVisible(By.Id("xcp_button-2094-btnIconEl"), 20);
-            Console.WriteLine("Add allegation");
+            waitForPageUntilElementIsVisible(By.Id("xcp_button-2117-btnIconEl"), 20);
             AddAllegationBtn.Clicks();
-            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2392-trigger-picker"), 20);
-            Console.WriteLine("Complaining Party");
-            ComplainingPartyDB.EnterText("CP FNAME 18 CP LNAME 18");
-            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2395-trigger-picker"), 20);
-            Console.WriteLine("Involved Party");
-            InvolvePartyDB.EnterText("IP FNAME 18 IP LNAME 18");       
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2415-trigger-picker"), 20);
+            ComplainingPartyTrigger.Clicks();
+            waitForPageUntilElementIsVisible(By.XPath("//div[@data-recordindex = '0']"), 20);
+            SelectFirstItemOnIndex.SendKeys(Keys.Enter);
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2418-trigger-picker"), 20);
+            InvolvePartyTrigger.Clicks();
+            waitForPageUntilElementIsVisible(By.XPath("//div[@data-recordindex = '0']"), 20);
+            SelectFirstItemOnIndex.SendKeys(Keys.Enter);
             AddBtn.Clicks();
-            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2423-inputEl"), 15);
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2447-inputEl"), 15);
             SelectChargeInput.EnterText("Discrimination");
-            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2424-inputEl"), 20);
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2448-inputEl"), 10);
             SelectProtectedInput.EnterText("Race");
-            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2425-inputEl"), 20);
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2449-inputEl"), 10);
             SelectDesignationInput.EnterText("A");
             AllegationUpdateBtn.Clicks();
-            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Finish')]"), 20);
+            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Finish')]"), 10);
             AllegationFinishBtn.Clicks();
-            waitForPageUntilElementIsVisible(By.Id("xcp_button-1167-btnIconEl"), 20);
+            waitForPageUntilElementIsVisible(By.Id("xcp_button-1190-btnIconEl"), 8);
             SaveFinalDesignation.Clicks();
-            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-1151-inputEl"), 20);
-            NextStepInvestigator.EnterText("Panel Member: Review And Approval");
-            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Complete')]"), 18);
-            CompleteStepBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-1176-inputEl"), 20);
+            AssignInvestigator.EnterText("CISU Investigator 1");
+            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Complete')]"), 8);
+            CompleteSupervisorBtn.Clicks();
 
         }
 
@@ -229,9 +225,34 @@ namespace ICMS_XCP
             CISUSupervisor.Clicks();
             //waitForPageUntilElementIsVisible(By.Id("xcp_button-1164-btnInnerEl"), 8);
             //AquireSuperviosrTask.Clicks();
+            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Assessment/Designation')]"), 20);
+            AssessmentTab.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("xcp_button-2117-btnIconEl"), 20);
+            AddAllegationBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2415-trigger-picker"), 20);
+            ComplainingPartyTrigger.Clicks();
+            waitForPageUntilElementIsVisible(By.XPath("//div[@data-recordindex = '0']"), 20);
+            SelectFirstItemOnIndex.SendKeys(Keys.Enter);
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2418-trigger-picker"), 20);
+            InvolvePartyTrigger.Clicks();
+            waitForPageUntilElementIsVisible(By.XPath("//div[@data-recordindex = '0']"), 20);
+            SelectFirstItemOnIndex.SendKeys(Keys.Enter);
+            AddBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2447-inputEl"), 15);
+            SelectChargeInput.EnterText("Discrimination");
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2448-inputEl"), 10);
+            SelectProtectedInput.EnterText("Race");
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-2449-inputEl"), 10);
+            SelectDesignationInput.EnterText("A");
+            AllegationUpdateBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Finish')]"), 10);
+            AllegationFinishBtn.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("xcp_button-1190-btnIconEl"), 8);
+            SaveFinalDesignation.Clicks();
+            waitForPageUntilElementIsVisible(By.Id("xcp_dropdown_list-1176-inputEl"), 20);
             AssignInvestigator.EnterText("CISU Investigator 1");
             waitForPageUntilElementIsVisible(By.XPath("//span[contains(text(), 'Complete')]"), 8);
-            CompleteStepBtn.Clicks();
+            CompleteSupervisorBtn.Clicks();
 
         }
 
