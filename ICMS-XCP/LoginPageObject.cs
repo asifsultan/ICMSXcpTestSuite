@@ -41,7 +41,7 @@ namespace ICMS_XCP
             TxtPassowrd.EnterText(password);
             //WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(1));
 
-
+            waitForPageUntilElementIsVisible(By.Id("signin-btn-btnInnerEl"), 10);
 
             BtnLogin.Clicks();
 
@@ -50,7 +50,11 @@ namespace ICMS_XCP
             return new CaseProcessing();
 
         }
-
+        public IWebElement waitForPageUntilElementIsVisible(By locator, int maxSec)
+        {
+            return new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(maxSec))
+                 .Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(locator));
+        }
 
 
 

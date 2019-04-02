@@ -40,7 +40,16 @@ namespace ICMS_XCP
             
         }
 
-     
+        public static string GetElementText(this IWebElement element)
+        {
+            return element.Text;
+
+
+        }
+
+
+
+
 
         public static void UploadFile(this IWebElement element, string filePath)
         {

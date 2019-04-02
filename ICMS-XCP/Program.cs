@@ -333,6 +333,234 @@ namespace ICMS_XCP
 
         }
 
+        [Test]
+        public void CaseProcessingPanel()
+        {
+
+            List<Datacollection> dataFirst = new List<Datacollection>();
+            dataFirst = ExcelLibrary.PopulateInCollection(@"C:\CaseData.xlsx", "Panel");
+
+
+            for (int i = 1; i <= ExcelLibrary.getTotalRow(@"C:\CaseData.xlsx", "Panel"); i++)
+            {
+
+                try
+                {
+                    String start_URL = PropertiesCollection.driver.Url.ToString();
+
+                    Console.WriteLine("Running Test number : " + i);
+                    PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                    PropertiesCollection.driver.Navigate().GoToUrl("http://ecmapptest03.isd.lacounty.gov:2330/ICMS/?reload");
+
+
+                    Console.WriteLine("Opened URL");
+
+
+                    // login to application
+
+                    String prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    do
+                    {
+                        prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    } while (!prev_URL.ToString().Contains("signin.jsp"));
+                    LoginPageObject pageLogin = new LoginPageObject();
+                    pageLogin.ClearFeilds();
+                    CaseProcessing inbox = pageLogin.Login(ExcelLibrary.ReadData(i, "UserName"),
+                        ExcelLibrary.ReadData(i, "Password"));
+
+
+                    prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    do
+                    {
+                        prev_URL = PropertiesCollection.driver.Url.ToString();
+
+
+                    } while (!prev_URL.ToString().Contains("icms_inbox"));
+
+
+                    inbox.CompletePanel();
+
+                    Console.WriteLine("Executed test number " + i + " successfully");
+                    testResult.Add(i, "True");
+
+                }
+
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Executed test number " + i + " unsuccessfully");
+                    Console.WriteLine("Test failed with following error: ");
+                    Console.WriteLine(ex.Message);
+                    testResult.Add(i, "Fail");
+                    errorMessage.Add(i, ex.Message);
+
+                }
+
+                Console.WriteLine(" ");
+
+
+            }
+
+            //ReportGenerator.GenerateXLS(testResult, errorMessage, true);
+            //PropertiesCollection.driver.Close();
+
+        }
+
+        [Test]
+        public void CaseProcessingCisuIntake()
+        {
+
+            List<Datacollection> dataFirst = new List<Datacollection>();
+            dataFirst = ExcelLibrary.PopulateInCollection(@"C:\CaseData.xlsx", "Validation");
+
+
+            for (int i = 1; i <= ExcelLibrary.getTotalRow(@"C:\CaseData.xlsx", "Validation"); i++)
+            {
+
+                try
+                {
+                    String start_URL = PropertiesCollection.driver.Url.ToString();
+
+                    Console.WriteLine("Running Test number : " + i);
+                    PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                    PropertiesCollection.driver.Navigate().GoToUrl("http://ecmapptest03.isd.lacounty.gov:2330/ICMS/?reload");
+
+
+                    Console.WriteLine("Opened URL");
+
+
+                    // login to application
+
+                    String prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    do
+                    {
+                        prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    } while (!prev_URL.ToString().Contains("signin.jsp"));
+                    LoginPageObject pageLogin = new LoginPageObject();
+                    pageLogin.ClearFeilds();
+                    CaseProcessing inbox = pageLogin.Login(ExcelLibrary.ReadData(i, "UserName"),
+                        ExcelLibrary.ReadData(i, "Password"));
+
+
+                    prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    do
+                    {
+                        prev_URL = PropertiesCollection.driver.Url.ToString();
+
+
+                    } while (!prev_URL.ToString().Contains("icms_inbox"));
+
+
+                    inbox.CompleteCisuIntake();
+
+                    Console.WriteLine("Executed test number " + i + " successfully");
+                    testResult.Add(i, "True");
+
+                }
+
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Executed test number " + i + " unsuccessfully");
+                    Console.WriteLine("Test failed with following error: ");
+                    Console.WriteLine(ex.Message);
+                    testResult.Add(i, "Fail");
+                    errorMessage.Add(i, ex.Message);
+
+                }
+
+                Console.WriteLine(" ");
+
+
+            }
+
+            //ReportGenerator.GenerateXLS(testResult, errorMessage, true);
+            //PropertiesCollection.driver.Close();
+
+        }
+
+        [Test]
+        public void CaseProcessingSDCO()
+        {
+
+            List<Datacollection> dataFirst = new List<Datacollection>();
+            dataFirst = ExcelLibrary.PopulateInCollection(@"C:\CaseData.xlsx", "Sdco");
+
+
+            for (int i = 1; i <= ExcelLibrary.getTotalRow(@"C:\CaseData.xlsx", "Sdco"); i++)
+            {
+
+                try
+                {
+                    String start_URL = PropertiesCollection.driver.Url.ToString();
+
+                    Console.WriteLine("Running Test number : " + i);
+                    PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                    PropertiesCollection.driver.Navigate().GoToUrl("http://ecmapptest03.isd.lacounty.gov:2330/ICMS/?reload");
+
+
+                    Console.WriteLine("Opened URL");
+
+
+                    // login to application
+
+                    String prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    do
+                    {
+                        prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    } while (!prev_URL.ToString().Contains("signin.jsp"));
+                    LoginPageObject pageLogin = new LoginPageObject();
+                    pageLogin.ClearFeilds();
+                    CaseProcessing inbox = pageLogin.Login(ExcelLibrary.ReadData(i, "UserName"),
+                        ExcelLibrary.ReadData(i, "Password"));
+
+
+                    prev_URL = PropertiesCollection.driver.Url.ToString();
+
+                    do
+                    {
+                        prev_URL = PropertiesCollection.driver.Url.ToString();
+
+
+                    } while (!prev_URL.ToString().Contains("icms_inbox"));
+
+
+                    inbox.CompleteSDCO();
+
+                    Console.WriteLine("Executed test number " + i + " successfully");
+                    testResult.Add(i, "True");
+
+                }
+
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Executed test number " + i + " unsuccessfully");
+                    Console.WriteLine("Test failed with following error: ");
+                    Console.WriteLine(ex.Message);
+                    testResult.Add(i, "Fail");
+                    errorMessage.Add(i, ex.Message);
+
+                }
+
+                Console.WriteLine(" ");
+
+
+            }
+
+            //ReportGenerator.GenerateXLS(testResult, errorMessage, true);
+            //PropertiesCollection.driver.Close();
+
+        }
+
 
         [TearDown]
         public void CleanUp()
