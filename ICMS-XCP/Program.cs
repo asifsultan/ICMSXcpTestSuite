@@ -22,7 +22,7 @@ namespace ICMS_XCP
         public void Initialize()
         {
             PropertiesCollection.driver = new ChromeDriver(@"C:\chrome");
-            PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            PropertiesCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             PropertiesCollection.driver.Manage().Window.Maximize();
             testResult.Add(0, "Status");
             errorMessage.Add(0, "Reason of failure");
@@ -533,7 +533,14 @@ namespace ICMS_XCP
                     } while (!prev_URL.ToString().Contains("icms_inbox"));
 
 
-                    inbox.CompleteSDCO();
+                    inbox.CompleteTriageSDCO();
+                    inbox.CompleteCEIUSDCO();
+                    inbox.CompleteSupervisorSDCO();
+                    inbox.CompleteIvestigatorApprovalSDCO();
+                    inbox.CompleteStackingSDCO();
+                    inbox.CompleteSendToQualityControlSDCO();
+                    inbox.CompleteQualityControlSDCO();
+                    
 
                     Console.WriteLine("Executed test number " + i + " successfully");
                     testResult.Add(i, "True");

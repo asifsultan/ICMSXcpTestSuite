@@ -82,9 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExcelLibrary.cs" />
-    <Compile Include="FifthPage.cs" />
     <Compile Include="CaseProcessing.cs" />
-    <Compile Include="FourthPage.cs" />
     <Compile Include="LoginPageObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertiesCollection.cs" />

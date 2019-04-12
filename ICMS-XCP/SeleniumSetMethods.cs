@@ -31,6 +31,12 @@ namespace ICMS_XCP
      
         }
 
+        public static void Submits(this IWebElement element)
+        {
+            element.Submit();
+
+        }
+
         // Selecting a drop down control
 
         public static void SelectDropDown(this  IWebElement element, int index)
